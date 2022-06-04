@@ -5,7 +5,7 @@
 
 char* flip_bits(char *data, size_t *size)
 {
-    char *mutated_data = malloc(*size);
+    char *mutated_data = (char*) malloc(*size);
     memcpy(mutated_data, data, *size);
     size_t index = rand() % *size;
     mutated_data[index] ^= flip_array[index % 8];
@@ -15,7 +15,7 @@ char* flip_bits(char *data, size_t *size)
 
 char* magic(char *data, size_t *size)
 {
-    char *mutated_data = malloc(*size);
+    char *mutated_data = (char*) malloc(*size);
     memcpy(mutated_data, data, *size);
     size_t magic_idx  = rand() % MAGIC_LEN;
     size_t magic_size = magic_length[magic_idx];
